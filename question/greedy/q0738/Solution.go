@@ -27,5 +27,5 @@ func monotoneIncreasingDigits(N int) int {
 	return res
 }
 func main() {
-	fmt.Println(monotoneIncreasingDigits(1234))
+	fmt.Println(monotoneIncreasingDigits(330))
 }
