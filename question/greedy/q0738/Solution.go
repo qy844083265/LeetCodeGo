@@ -5,6 +5,9 @@ import (
 	"strconv"
 )
 
+/**
+给定一个非负整数 N，找出小于或等于 N 的最大的整数，同时这个整数需要满足其各个位数上的数字是单调递增。
+*/
 func monotoneIncreasingDigits(N int) int {
 	s := strconv.Itoa(N)
 	ss := []byte(s)
