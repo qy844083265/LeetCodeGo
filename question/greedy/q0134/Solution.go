@@ -5,7 +5,22 @@ package main
 // 如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。
 
 func canCompleteCircuit(gas []int, cost []int) int {
-	return 0
+	var curSum = 0
+	var totalSum = 0
+	var start = 0
+	for i := 0; i < len(gas); i++ {
+		ret := gas[i] - cost[i]
+		curSum += ret
+		totalSum += ret
+		if curSum < 0 {
+			start = i + 1
+			curSum = 0
+		}
+	}
+	if totalSum < 0 {
+		return -1
+	}
+	return start
 }
 func main() {
 
