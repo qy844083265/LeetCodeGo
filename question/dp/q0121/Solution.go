@@ -9,18 +9,18 @@ package main
  */
 
 func maxProfit(prices []int) int {
-	var len = len(prices)
-	var dp = make([][]int, len)
+	var length = len(prices)
+	var dp = make([][]int, length)
 	for k, _ := range dp {
 		dp[k] = make([]int, 2)
 	}
 	dp[0][0] = -prices[0]
 	dp[0][1] = 0
-	for i := 1; i < len; i++ {
+	for i := 1; i < length; i++ {
 		dp[i][0] = max(dp[i-1][0], -prices[i])
 		dp[i][1] = max(dp[i-1][1], prices[i]+dp[i-1][0])
 	}
-	return dp[len-1][1]
+	return dp[length-1][1]
 }
 
 func max(x, y int) int {
